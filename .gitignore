@@ -1,3 +1,7 @@
 env/
 
 config/__pycache__/
+
+account/__pycache__/
+finelib_scrapper/__pycache__/
+finelib_scrapper/migrations/__pycache__/
