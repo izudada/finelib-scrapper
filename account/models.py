@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from helpers.models import TrackingModel
 
 
-class BlogUserManager(UserManager):
+class ScrapeUserManager(UserManager):
     
     def _create_user(self, username, email, password, **extra_fields):
         """
@@ -92,7 +92,7 @@ class User(AbstractBaseUser, PermissionsMixin, TrackingModel):
             'Designates whether this users email verified. '
         ),
     )
-    objects = BlogUserManager()
+    objects = ScrapeUserManager()
 
     EMAIL_FIELD = 'email'
     USERNAME_FIELD = 'email'
