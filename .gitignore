@@ -11,3 +11,5 @@ account/migrations/__pycache__/
 config/__pycache__/
 
 vry
+
+config/.env
