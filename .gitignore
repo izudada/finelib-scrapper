@@ -12,4 +12,4 @@ config/__pycache__/
 
 vry
 
-config/.env
+.env
