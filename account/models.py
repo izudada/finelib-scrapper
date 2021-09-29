@@ -98,10 +98,6 @@ class User(AbstractBaseUser, PermissionsMixin, TrackingModel):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
-    @property
-    def token(self):
-        return ''
-
     def __str__(self):
         return self.username
 
