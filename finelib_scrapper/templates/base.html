@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Box Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{%  static 'css/main.css' %}">
+
+        <title>Dashboard</title>
+    </head>
+
+    <body>
+
+        <header class="header">
+            <div class="header__container">
+                <img src="{% static 'images/perfil.jpg' %}" alt="header image" class="header__img">
+
+                <a href="" class="header__logo">{{ user }}</a>
+
+                <div class="header__search">
+                    <input type="search" placeholder="Search" class="header__input">
+                    <i class="bx bx-search header__icon"></i>
+                </div>
+
+                <div class="header__toggle">
+                    <i class="bx bx-menu" id="header-toggle"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="nav" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <i class="bx bxs-disc nav__icon"></i>
+                        <span class="nav__logo-name">{{ user }}</span>
+                    </a>
+
+                    <div class="nav__List">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Menu</h3>
+
+                            <a href="#" class="nav__link active">
+                                <i class="bx bx-home nav__icon"></i>
+                                <span class="nav__name">Home</span>
+                            </a>
+
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class="bx bx-data nav__icon"></i>
+                                    <span class="nav__name">Scrape By</span>
+                                    <i class="bx bxs-chevron-right nav__icon nav__dropdown-icon"></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">URL</a>
+                                        <a href="#" class="nav__dropdown-item">Category</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#" class="nav__link">
+                                <i class="bx bx-history nav__icon"></i>
+                                <span class="nav__name">History</span>
+                            </a>
+
+                            <a href="#" class="nav__link">
+                                <i class="bx bx-user nav__icon"></i>
+                                <span class="nav__name">Profile</span>
+                            </a>
+
+                            <a href="#" class="nav__link">
+                                <i class="bx bx-bell nav__icon"></i>
+                                <span class="nav__name">Notifications</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{% url 'logout' %}" class="nav__link nav__logout">
+                    <i class="bx bxs-log-out nav__icon"></i>
+                    <span class="nav__name">Logout</span>
+                </a>
+
+            </nav>
+        </div>
+
+        <main>
+            {% block body %}
+
+            {% endblock %}
+        </main>
+
+        <footer>
+
+        </footer>
+
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+
+</html>
